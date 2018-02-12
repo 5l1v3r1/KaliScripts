@@ -1,3 +1,0 @@
-#!/bin/bash
-sudo cp $1 $1_backup && sudo chmod -wx $1_backup
-
