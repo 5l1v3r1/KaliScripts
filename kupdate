@@ -1,0 +1,28 @@
+#!/bin/bash
+
+echo
+echo -e "\e[1m\e[32mUpdating Kali\e[0m"
+echo
+sudo apt-get update -y &&
+sudo apt-get upgrade -y &&
+sudo apt-get dist-upgrade -y &&
+sudo apt-get full-upgrade -y &&
+sudo apt-get autoremove -y
+
+echo
+pushd /opt >/dev/null
+
+for dir in `find . -type d`
+do
+	if [ -d "$dir/.git" ]; then
+		echo -e "\e[1m\e[32mUpdating $dir\e[0m"
+		pushd "$dir" > /dev/null && git pull
+		if [ -f "update.sh" ]; then
+	                ./update.sh
+	        fi
+		popd >/dev/null
+		echo
+	fi
+done
+
+popd >/dev/null
