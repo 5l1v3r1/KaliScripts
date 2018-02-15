@@ -1,12 +1,13 @@
 #!/bin/bash
 
 echo
-echo -e "\e[1m\e[32mUpdating Kali\e[0m"
+echo -e "\e[1m\e[32mUpdating Packages\e[39m"
 echo
-apt-get update -y &&
-apt-get upgrade -y &&
-apt-get full-upgrade -y &&
-apt-get autoremove -y
+apt update -y &&
+apt upgrade -y &&
+apt full-upgrade -y &&
+apt autoremove -y
+apt clean
 
 echo
 pushd /opt >/dev/null
@@ -14,7 +15,7 @@ pushd /opt >/dev/null
 for dir in `find . -type d`
 do
 	if [ -d "$dir/.git" ]; then
-		echo -e "\e[1m\e[32mUpdating $dir\e[0m"
+		echo -e "\e[1m\e[32mUpdating $dir\e[39m"
 		pushd "$dir" > /dev/null && git pull
 		if [ -f "update.sh" ]; then
 	                ./update.sh
