@@ -3,10 +3,10 @@
 echo
 echo -e "\e[1m\e[32mUpdating Kali\e[0m"
 echo
-sudo apt-get update -y &&
-sudo apt-get upgrade -y &&
-sudo apt-get full-upgrade -y &&
-sudo apt-get autoremove -y
+apt-get update -y &&
+apt-get upgrade -y &&
+apt-get full-upgrade -y &&
+apt-get autoremove -y
 
 echo
 pushd /opt >/dev/null
