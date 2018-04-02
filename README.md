@@ -21,3 +21,9 @@ This sets the virtual monitor resolution to 1920x1080 if Kali is being run in a 
 `backup <file>`
 
 Backup a file by copying it to the same location it is in but with a _backup suffix, and then removing write and execute permissions from the backup.
+
+## cidr-to-list.sh
+
+`cidr-to-list.sh 192.168.0.1/24` or `cidr-to-list.sh inputcidr.txt`
+
+Converts a cidr range to a list of IPs.
