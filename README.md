@@ -6,7 +6,7 @@ Just clone and add to your path.
 
 ## update
 
-`update`
+`kupdate`
 
 This script full updates Kali Linux, and checks each directory under /opt. If it's a git directory it will pull, and if there is an update script in that directory it will then run it.
 
