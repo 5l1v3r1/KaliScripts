@@ -20,9 +20,27 @@ do
 		if [ -f "update.sh" ]; then
 	                ./update.sh
 	        fi
+		if [ -f "requirements.txt" ]; then
+			pip install -r requirements.txt
+		fi
+		if [ -f "setup.py" ]; then
+			python setup.py install
+		fi
+		if [ -f "setup/install.sh" ]; then
+			./setup/install.sh
+		fi
 		popd >/dev/null
 		echo
 	fi
 done
 
 popd >/dev/null
+
+echo
+echo -e "\e[1m\e[32mUpdating locate DB\e[39m"
+echo 
+updatedb
+
+echo
+echo -e "\e[1m\e[32mDone!\e[39m"
+
